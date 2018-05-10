@@ -1,0 +1,26 @@
+{
+  "name": "webpack_demo",
+  "version": "1.0.0",
+  "description": "please checkout the branch to refer different feature.",
+  "main": "index.js",
+  "dependencies": {
+    "babel-loader": "^8.0.0-beta.0",
+    "lodash": "^4.17.10",
+    "webpack": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/80666881/webpack_demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/80666881/webpack_demo/issues"
+  },
+  "homepage": "https://github.com/80666881/webpack_demo#readme"
+}
