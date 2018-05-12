@@ -8,7 +8,9 @@
     "lodash": "^4.17.10",
     "webpack": "^3.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
