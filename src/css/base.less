@@ -1,0 +1,13 @@
+@boxBackgroundColor:lightgreen;
+
+body{
+    background: gray;
+}
+
+.box{
+    composes: bigBox from './common.less';
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    background:@boxBackgroundColor;
+}

@@ -65,22 +65,6 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(1)(false);
-// imports
-
-
-// module
-exports.push([module.i, "html{color:aqua}.src-css-common_bigBox_27sNb{border:2px solid red}", ""]);
-
-// exports
-exports.locals = {
-	"bigBox": "src-css-common_bigBox_27sNb"
-};
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports) {
 
 /*
@@ -160,6 +144,22 @@ function toComment(sourceMap) {
 	return '/*# ' + data + ' */';
 }
 
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "html{color:aqua}.src-css-common_bigBox_PK_Jy{border:2px solid red}", ""]);
+
+// exports
+exports.locals = {
+	"bigBox": "src-css-common_bigBox_PK_Jy"
+};
 
 /***/ }),
 /* 2 */
@@ -568,15 +568,15 @@ function updateLink (link, options, obj) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_base_css__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_base_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_base_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_css__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__css_common_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_base_less__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__css_base_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__css_base_less__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_less__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_common_less___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__css_common_less__);
 
 
 
 document.getElementById('app')
-app.innerHTML = '<div class="' + __WEBPACK_IMPORTED_MODULE_0__css_base_css___default.a.box + '"></div>'
+app.innerHTML = '<div class="' + __WEBPACK_IMPORTED_MODULE_0__css_base_less___default.a.box + '"></div>'
 
 /***/ }),
 /* 5 */
@@ -602,8 +602,8 @@ var update = __webpack_require__(3)(content, options);
 if(content.locals) module.exports = content.locals;
 
 if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/index.js??ref--0-1!./base.css", function() {
-		var newContent = require("!!../../node_modules/css-loader/index.js??ref--0-1!./base.css");
+	module.hot.accept("!!../../node_modules/css-loader/index.js??ref--1-1!../../node_modules/less-loader/dist/cjs.js!./base.less", function() {
+		var newContent = require("!!../../node_modules/css-loader/index.js??ref--1-1!../../node_modules/less-loader/dist/cjs.js!./base.less");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 
@@ -632,16 +632,16 @@ if(false) {
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(1)(false);
+exports = module.exports = __webpack_require__(0)(false);
 // imports
-exports.i(__webpack_require__(0), undefined);
+exports.i(__webpack_require__(1), undefined);
 
 // module
-exports.push([module.i, "body{background:gray}.src-css-base_box_REzyU{width:200px;height:200px;border-radius:4px;background:#333}", ""]);
+exports.push([module.i, "body{background:gray}.src-css-base_box_3WjJS{width:200px;height:200px;border-radius:4px;background:#90ee90}", ""]);
 
 // exports
 exports.locals = {
-	"box": "src-css-base_box_REzyU " + __webpack_require__(0).locals["bigBox"] + ""
+	"box": "src-css-base_box_3WjJS " + __webpack_require__(1).locals["bigBox"] + ""
 };
 
 /***/ }),
@@ -744,7 +744,7 @@ module.exports = function (css) {
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(0);
+var content = __webpack_require__(9);
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -763,8 +763,8 @@ var update = __webpack_require__(3)(content, options);
 if(content.locals) module.exports = content.locals;
 
 if(false) {
-	module.hot.accept("!!../../node_modules/css-loader/index.js??ref--0-1!./common.css", function() {
-		var newContent = require("!!../../node_modules/css-loader/index.js??ref--0-1!./common.css");
+	module.hot.accept("!!../../node_modules/css-loader/index.js??ref--1-1!../../node_modules/less-loader/dist/cjs.js!./common.less", function() {
+		var newContent = require("!!../../node_modules/css-loader/index.js??ref--1-1!../../node_modules/less-loader/dist/cjs.js!./common.less");
 
 		if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 
@@ -788,6 +788,22 @@ if(false) {
 
 	module.hot.dispose(function() { update(); });
 }
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(0)(false);
+// imports
+
+
+// module
+exports.push([module.i, "html{color:aqua}.src-css-common_bigBox_PK_Jy{border:2px solid red}", ""]);
+
+// exports
+exports.locals = {
+	"bigBox": "src-css-common_bigBox_PK_Jy"
+};
 
 /***/ })
 /******/ ]);
