@@ -97,6 +97,8 @@ require.include('./moduleA.js')
             }
             ```
 
+    ---
+
     - style-loader/url
 
         - 在页面生成link标签
@@ -110,6 +112,9 @@ require.include('./moduleA.js')
                 loader:'file-loader'
             }
         ```
+
+    ---
+
     - style-loader/useable
 
         - 控制某些css是否插入
@@ -150,6 +155,8 @@ require.include('./moduleA.js')
             },500)
           ```
 
+    ---
+
     - css-loader
         - 让js可以import CSS进来
 
@@ -174,10 +181,38 @@ require.include('./moduleA.js')
             ```
         - options
             - alias （解析的别名）
+
             - importLoader （@import ）
+
             - Minimize （是否压缩）
+
             - modules （启用css-modules）
 
+                - 可以在js中引入css的某个样式(此时类名会被替换成随机类名,可通过```localIdentName```配置)
+                - 可以在css中用composes引入css某个样式
+
+            >示例
+
+                ```css
+                /* base.css*/
+                .box{
+                    composes: bigBox from './common.css';/* 最好放前面，否则引入顺序有问题 */
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 4px;
+                    background: #333;
+
+                }
+                ```
+
+                ```js
+                /*app.js */
+                import base from './css/base.css'
+                import common from './css/common.css'
+
+                document.getElementById('app')
+                app.innerHTML = '<div class="' + base.box + '"></div>'
+                ```
 
 
  - CSS模块化

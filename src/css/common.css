@@ -1,3 +1,7 @@
 html{
     color: aqua;
 }
+
+.bigBox{
+    border: 2px solid red;
+}
