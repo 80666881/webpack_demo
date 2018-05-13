@@ -1,7 +1,20 @@
-import  './subPageA'
-import  './subPageB'
+import * as _ from 'lodash' 
 
-import * as _ from 'lodash'
+var page = 'subPageB'
 
 
-export default 'pageB'
+if (page === 'subPageA') {
+
+    import('./subPageA')
+    .then(function (subPageA) {
+        console.log(subPageA)
+    })
+
+
+} else if (page === 'subPageB') {
+    import('./subPageB')
+    .then(function (subPageB) {
+        console.log(subPageB)
+    })
+}
+export default 'subPageB'
