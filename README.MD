@@ -2,6 +2,8 @@
 
 please checkout the branch to refer different feature.
 
+> BASE ON webpack@3.4.1
+
 ### 代码分割和懒加载
 
  - webpack methods
@@ -222,3 +224,59 @@ require.include('./moduleA.js')
         - 需安装less，less-loader
 
  - 提取CSS代码（单独缓冲，也有可能被公用）
+
+    - extract-loader(主流方式)
+        - ExtractTextWebpackPlugin（需要手动引入css）
+            
+            - install
+            
+            ```js
+            npm i --save-dev extract-text-webpack-plugin webpack
+            ```
+
+            - usage
+
+            ```js
+
+            var webpack = require('webpack')
+            var path = require('path')
+            const CleanWebpackPlugin = require('clean-webpack-plugin') //清除dist目录
+            const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
+
+            //other content...
+
+            rules: 
+                [{
+                    test: /\.less$/,
+                    use: ExtractTextWebpackPlugin.extract({
+                        fallback: { //当不提取css的时候，用什么形式加载css
+
+                            loader: 'style-loader',
+                            options: {
+                                singleton: true,
+                                transform: './css.transform.js'
+                            }
+                        },
+                        use: [{ //如果提取出来，这些文件还要怎么处理
+
+                                loader: 'css-loader',
+                                options: {
+                                    minimize: true,
+                                    modules: true,
+                                    localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                                }
+                            },
+                            {
+                                loader: 'less-loader'
+                            }
+                        ]
+                    })
+                }],
+            plugins: [
+                new CleanWebpackPlugin('./dist'),
+                new ExtractTextWebpackPlugin({
+                    filename: '[name].min.css',
+                    allChunks:false//默认false，如果为true，会把所有依赖的css都提取出来，如果为false，只有初始化的css加载（异步加载之外）
+                })
+            ]
+            ```
