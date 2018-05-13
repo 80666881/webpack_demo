@@ -280,3 +280,66 @@ require.include('./moduleA.js')
                 })
             ]
             ```
+
+ - PostCSS(后编译器)
+
+    - 放置位置
+
+        - css-loader之后，预处理编译器（less-loader，sass-loader等）之前
+
+    - install
+        - postcss
+
+        - postcss-loader
+        
+        - autoprefixer
+            - 加上浏览器前缀，使各个浏览器能识别语法
+
+        - cssnano
+            - 压缩css，与css-loader的压缩一致
+
+        - postcss-cssnext
+            - 可以使用css未来的语法
+                - css变量,css variables
+                - 定制选择器,custom selector
+                - calc()
+    
+    - usage
+    
+        - postcss
+
+        ```js
+        //webpack.config.js
+        {
+            test: /\.less$/,
+            use: ExtractTextWebpackPlugin.extract({
+                fallback: { //当不提取css的时候，用什么形式加载css
+                    loader: 'style-loader',
+                    options: {
+                        singleton: true,
+                        transform: './css.transform.js'
+                    }
+                },
+                use: [{ //如果提取出来，这些文件还要怎么处理
+                        loader: 'css-loader',
+                        options: {
+                            // minimize: true,
+                            modules: true,
+                            localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss', //表面后面的插件给postcss用的
+                            plugins: (loader) => [
+                                require('autoprefixer')()
+                            ]
+                        }
+                    },
+                    {
+                        loader: 'less-loader'
+                    }
+                ]
+            }
+        ```

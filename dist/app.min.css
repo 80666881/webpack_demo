@@ -1,1 +1,24 @@
-html{color:aqua}.src-css-common_bigBox_PK_Jy{border:2px solid red}body{background:gray}.src-css-base_box_3WjJS{width:200px;height:200px;border-radius:4px;background:#90ee90}html{color:aqua}.src-css-common_bigBox_PK_Jy{border:2px solid red}
+html{
+    color: aqua;
+}
+
+.src-css-common_bigBox_PK_Jy{
+    border: 2px solid red;
+}body {
+  background: gray;
+}
+.src-css-base_box_3WjJS {
+  width: 200px;
+  height: 200px;
+  border-radius: 4px;
+  background: lightgreen;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+html {
+  color: aqua;
+}
+.src-css-common_bigBox_PK_Jy {
+  border: 2px solid red;
+}

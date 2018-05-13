@@ -3,6 +3,7 @@ var path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin') //清除dist目录
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
 
+
 module.exports = {
     entry: {
         'app': './src/app.js'
@@ -45,9 +46,18 @@ module.exports = {
                 use: [{ //如果提取出来，这些文件还要怎么处理
                         loader: 'css-loader',
                         options: {
-                            minimize: true,
+                            // minimize: true,
                             modules: true,
                             localIdentName: '[path][name]_[local]_[hash:base64:5]'
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            ident: 'postcss', //表面后面的插件给postcss用的
+                            plugins: (loader) => [
+                                require('autoprefixer')()
+                            ]
                         }
                     },
                     {
@@ -61,7 +71,7 @@ module.exports = {
         new CleanWebpackPlugin('./dist'),
         new ExtractTextWebpackPlugin({
             filename: '[name].min.css',
-            allChunks:false//默认false如果为true，会把所有依赖的css都提取出来，如果为false，只有初始化的css加载（异步加载之外）
+            allChunks: false //默认false，如果为true，会把所有依赖的css都提取出来，如果为false，只有初始化的css加载（异步加载之外）
         })
     ]
 
