@@ -5,20 +5,27 @@
   "main": "index.js",
   "dependencies": {
     "babel-loader": "^8.0.0-beta.0",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "lodash-es": "^4.17.10"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.47",
     "autoprefixer": "^8.5.0",
+    "babel-plugin-lodash": "^3.3.2",
+    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
+    "glob-all": "^3.1.0",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "postcss": "^6.0.22",
     "postcss-cssnext": "^3.1.0",
     "postcss-loader": "^2.1.5",
+    "purify-css": "^1.2.5",
+    "purifycss-webpack": "^0.7.0",
     "style-loader": "^0.21.0",
     "webpack": "^3.4.1"
   },
@@ -36,7 +43,7 @@
     "url": "https://github.com/80666881/webpack_demo/issues"
   },
   "homepage": "https://github.com/80666881/webpack_demo#readme",
-  "browserlist": [
+  "browserlists": [
     ">= 1%",
     "last 2 versions"
   ]

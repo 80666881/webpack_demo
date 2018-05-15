@@ -2,7 +2,8 @@ var webpack = require('webpack')
 var path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin') //清除dist目录
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin')
-
+var PurifyCss= require('purifycss-webpack')
+var glob = require('glob-all')
 
 module.exports = {
     entry: {
@@ -39,8 +40,7 @@ module.exports = {
                 fallback: { //当不提取css的时候，用什么形式加载css
                     loader: 'style-loader',
                     options: {
-                        singleton: true,
-                        transform: './css.transform.js'
+                        singleton: true
                     }
                 },
                 use: [{ //如果提取出来，这些文件还要怎么处理
@@ -65,6 +65,17 @@ module.exports = {
                     }
                 ]
             })
+        },{
+            test:/\.js$/,
+            use:[
+                {
+                    loader:'babel-loader',
+                    options:{
+                        presets:['env'],
+                        plugins:['lodash']
+                    }
+                }
+            ]
         }]
     },
     plugins: [
@@ -72,7 +83,14 @@ module.exports = {
         new ExtractTextWebpackPlugin({
             filename: '[name].min.css',
             allChunks: false //默认false，如果为true，会把所有依赖的css都提取出来，如果为false，只有初始化的css加载（异步加载之外）
-        })
+        }),
+
+        new PurifyCss({
+            paths:glob.sync([
+                // path.join(__dirname,'./index.html')
+            ])
+        }),
+        new webpack.optimize.UglifyJsPlugin(),
     ]
 
 }

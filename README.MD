@@ -343,3 +343,27 @@ require.include('./moduleA.js')
                 ]
             }
         ```
+
+        - 所有插件都共用一份兼容配置
+            - 都放在package.json
+            - .browserlistrc
+        
+---
+
+ - TreeShaking
+
+    - js使用场景
+
+        - 常规优化(本地优化)
+
+        ```js
+           plugins: [new webpack.optimize.UglifyJsPlugin()]
+        ```
+
+        - 引入第三方库的某部分功能
+
+    - css
+
+        -purifycss-webpack
+
+        >这部分需要再看文档，现在demo有问题

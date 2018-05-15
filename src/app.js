@@ -1,5 +1,15 @@
-import base from './css/base.less'
-import common from './css/common.less'
+import './css/base.less'
 
-document.getElementById('app')
-app.innerHTML = '<div class="' + base.box + '"></div>'
+
+var app = document.getElementById('app')
+var div = document.createElement('div')
+
+div.className = 'box'
+app.appendChild(div)
+import {a} from './common/util'
+
+console.log(a())
+
+import { chunk } from 'lodash-es'
+
+console.log(chunk([1,2,3,4,5],2))
